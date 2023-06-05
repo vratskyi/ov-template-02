@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="./media/icons/favicon.png" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="./media/icons/favicon-small.png"
+    />
+    <link rel="stylesheet" href="./source/styles/all-animation.min.css" />
+    <link rel="stylesheet" href="./source/styles/flowbite.min.css" />
+    <link rel="stylesheet" href="./source/styles/output.css" />
+
+    <title>VRATSKYI - Blog</title>
+  </head>
+  <body class="bg-slate-200 subpixel-antialiased">
+    <!-- MENU -->
+    <nav
+      class="bg-1 transition-all backdrop-blur-xl px-2 sm:px-4 py-2.5 dark:bg-gray-800 shadow-md fixed right-0 left-0 z-50"
+    >
+      <div
+        class="container flex flex-wrap justify-between items-center mx-auto"
+      >
+        <a href="/" class="flex items-center">
+          <img
+            src="./media/icons/logo.png"
+            class="mr-3 h-6 sm:h-9 md:opacity-70 hover:opacity-100"
+            alt="Vratskyi Logo"
+          />
+        </a>
+        <div class="flex md:order-last">
+          <ol
+            class="inline-flex items-center space-x-1 md:space-x-3 mr-6 lg:mr-0"
+          >
+            <li class="inline-flex items-center mr-2 md:mr-0">
+              <a
+                href="./"
+                class="inline-flex items-center text-sm font-medium opacity-80 hover:opacity-100"
+              >
+                <img
+                  class="w-8"
+                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABmJLR0QA/wD/AP+gvaeTAAAEuElEQVRoge2ZbUxbVRjH/09bYC0ttBTQVdniMgxs2YelE2IwwMIYIWpmVaay7JNkyVw2zTRzZskGH3yNksUXZjKzD7678LJoitGtG5FhgAERp47MxWQxQaCrLS1QXto+fpAh9N723tu3mIxfcj+c55xzz/+553nOOT0FVlnlzoYS8ZK6urPqiYC2BKTeDmYrgCIAawHoASwAcC0+1wH0qJh7Lp17ZDARY8flQPmu7wpUquABrVazt6bSYun49iYAQKfVoKbyHtwubyk2AQCuXnMv9bV7G0eZ6DQHgu9ndQ3eilWDJpZOH372W2HRfaZWR/fopr4hp6a5qQRFG7Pxt2cOvYNONDeVLpX/uOnDq69sAwAcOPoj/hydXnwLWYhxgtTqI1NVJadmgroT+V1dU0l3oPxxe32aSnM6GGLd1RE35uaD+KF3DKPjM/j5mrDs9syhu3cMAJaJX4EWwGGdevpp344HDhouXGlXokd2CFn3DaTpneMtABqUDBCJtjMPRap612zMOkxEQTnvUclpZH30G53F77LbatcviddpNbDVrofc8pZi01IuSHDI5fG2MXO6nMaSIWTdN5CWN+XseOt4aXWkOJcqR86DiOxyeSa/YubdRLQQlwN653iLH9gZLc5jyYM1T1ZLDf3YNOhtAM9HaxQ1B8ptnXsI/KnUSLFg9zbJasegOoOjrzVSfcQcqLK1mwl8ElAe73HEvwACn/LVbs2LVB8xhI4fefCSo3s0V2m8y43/2dbzcn3IBfNLyDG+LNuB/Ue7N/j9wc2xxHsM+4A0RPvdbvfrJpPJI6gSa19p63yDwaIeJ4oo+4A4zMdyc4yvhZuFM9DYqOJh3hN+nom3HH4ekrEKrdQPPAtA2oGKYWtpRrr63njiPgH7gAACNnh3Wouyvh8cieoASL093rhPSh4AUAVVDwNY4YAgBypsne0A22IeRSaKcwAAEb40G7OfWW4T2QdC98e77idyH1gOM9aF2wQhtCZdbfm/xf9/kLQDs/OhzFTEv9JVaJF8gUvhhgqbfQ6ArKNsPMg9C4Uxr3f0Zyw3iOQA+WKTlBIE2gQzcMs9OQRga0rkKGco15RtXW4QmQH+KVVqlCPUJnCAQMOpERMLQm2CVSj9qSoHBWX9VE45HGJHuE30NDpVVfILgM1JV6QEphH9xb7icLPopybQ2eQrUgZR6HNRu5hxzOfL1wRCNwAYkqpKPtMc0BTm5WX+FV4hOgN3GwwTDJxMvi55MPCOmHggyq3ExMSEXpWWcQPAXUlTJg8nhQIbzWazV6wy6rWKb0fpE8Qc8UojJTDq9Rf7v4hUHXW9NFzoayNQS+JVyYPAH0QTD8i4G9XlrDvEQEfiZMnGrgtmviDVSNbt9O/MGUa392Mi7I5flxz4nH8qu76ggPxSLWVfrzOz2uXxNgM4qKSfQhj/Xq+/KPd6XbEQ1+RkDYdwBoBFaV8JnAxqyDNlfa2kU0xf0llWZtBmLDwHwjHEv9nNgPBeYDb9TePly27p5iuJKxSma6xrEVA1MGgvgEKF3a8T8SccwEf6ritjsWpIWCxPV5ds4xCVgbgUjE0AzIsPcPtvVsavIOonFfdknu8fSNTYq6xyJ/MPthsJahhTOjUAAAAASUVORK5CYII="
+              /></a>
+            </li>
+            <svg
+              class="w-6 h-6 text-secondary-50/[0.7]"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M7 2a1 1 0 011 1v1h3a1 1 0 110 2H9.578a18.87 18.87 0 01-1.724 4.78c.29.354.596.696.914 1.026a1 1 0 11-1.44 1.389c-.188-.196-.373-.396-.554-.6a19.098 19.098 0 01-3.107 3.567 1 1 0 01-1.334-1.49 17.087 17.087 0 003.13-3.733 18.992 18.992 0 01-1.487-2.494 1 1 0 111.79-.89c.234.47.489.928.764 1.372.417-.934.752-1.913.997-2.927H3a1 1 0 110-2h3V3a1 1 0 011-1zm6 6a1 1 0 01.894.553l2.991 5.982a.869.869 0 01.02.037l.99 1.98a1 1 0 11-1.79.895L15.383 16h-4.764l-.724 1.447a1 1 0 11-1.788-.894l.99-1.98.019-.038 2.99-5.982A1 1 0 0113 8zm-1.382 6h2.764L13 11.236 11.618 14z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+            <li>
+              <div class="flex items-center ml-2 md:ml-0">
+                <a
+                  href="./ua/blog/./"
+                  class="text-sm font-medium opacity-80 hover:opacity-100"
+                  ><img
+                    class="inline-block w-8"
+                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABmJLR0QA/wD/AP+gvaeTAAADjUlEQVRoge2ZT2wUVRzHv9+306rQkgCSiIU0IDBNOO6C4diGi57w4J9YTTyYNE0L4U5MMDHehW5lY8KpJFA8aKIcG25E2r27DZoGazVK98COJS2d+XqAGJw/nXn7Z2jCfo6/93s7n9++eTPz3gO6dHmxYVt+ZVaFwXrjpAkwLLBogCEB+wH0Pc3wBKwAqBGqCppb+mvXXVxk0OqlWyrgjfLaQTGYAPSRgAHLKy8r4Izjm/K9czuWm3VoqoAjlxr7fAdfAPgEQG+zF3/KBoGrTkGfLY7temDb2bqAw9Peh4IuA9hj2zeFVRGTS+P91206ZS6gWFFP3femAXxqrWYBhcpup+9sdYyPM+VnSXq9oh0v+41vBb7Vml42JN3acPrfXRnjWlquSUsoVtSTpzwAkHz7Jd/7/visUudXagF135vOU/4ZTj964H2VlrTlLXT4a29U0kz7nOyR8MHSRP+NpPbEAgamHu7tNfwZwKsdMctOvacgN+kRm3gL9Rp+iecvDwB7Hgf8PKkxdgSOXFo74Dv+L2j9JdUuNlhwjv469sr9cEPsCAROMIntIw8AvcGmPx7XEC3gooyo0Y4rWWKojzGrQiQeDgy+1ngTwoF8tLIjYODQ6sNiOB4pwAQYzkfJHoIj4VikAIqlfHTsEZg+AgFxLB+dpnDDgegIPFlJbU8UdYt7jPbFxLYL/eGAEw7cG4nMk21F+DkaNwJeHiJN0ggHogUQf+Si0hwRt+gkDrCYj4s9BGvhWKQAQQv56NgjIOIWfROrMJePjj2GirhFPqclmKB2YgnAwVyssnPfuPOHSPxvNy86B4gAwrX8vDJCXAvLAwnrAeOYMoCNjktlZ93AKcc1xBbAoz8tA7raWScLyG/o3vk9rilxTWz8ngsArPcqO8CqgZ+4Jk4sgMfv1EWd7YxTdgSO060m/pFbbmw57sJ1gJX2a2VEKDtDd29ulZK6M2fcwQlC37XPKhuUfjR/7jyflpdaAHnTp6dRgrfao5YOiR/4j97j8O3NtNzUAgCApeoaPf8MoCut66UglLmy8x2Wqqk700ATBxybtRPvU5hC+3ft/hY4kXbPh8k0As/iuPM3jDgEYBrAum3/GNZBThnfGbKVB1o85FPt1EAQbE6CGIX9t9NvIGYMnHLSSyoLbTlmlWCwWCoF4AjFoiAXT04t/ztmBbRMmEUBC4aaw7H5aty3TZcuXez4F3L2Eh2go8QYAAAAAElFTkSuQmCC"
+                /></a>
+              </div>
+            </li>
+          </ol>
+          <button
+            data-collapse-toggle="mobile-menu-4"
+            type="button"
+            class="inline-flex items-center p-2 text-sm text-secondary-50 md:hidden hover:bg-secondary-700 focus:outline-none focus:ring-2 focus:ring-primary"
+            aria-controls="mobile-menu-4"
+            aria-expanded="false"
+          >
+            <span class="sr-only">Open main menu</span>
+            <svg
+              class="w-6 h-6"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+            <svg
+              class="hidden w-6 h-6"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+          </button>
+        </div>
+        <div
+          class="hidden justify-between items-center w-full h-full md:h-10 md:flex md:w-auto md:order-1"
+          id="mobile-menu-4"
+        >
+          <ul
+            class="grid grid-rows-1 grid-cols-5 place-items-center gap-0 md:gap-4 lg:gap-8 mt-6 md:mt-0 h-full text-sm md:text-sm md:font-medium"
+          >
+            <li>
+              <a
+                href="#home"
+                class="block text-center md:text-start py-2 pr-4 pl-3 text-secondary-50/[0.7] md:hover:text-secondary-50 md:bg-transparent md:p-0 dark:text-white"
+                ><svg
+                  class="inline-block w-6 h-6"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"
+                  ></path>
+                </svg>
+                <span class="hidden md:inline-block">Home</span></a
+              >
+            </li>
+            <li>
+              <a
+                href="../#about"
+                class="block text-center md:text-start py-2 pr-4 pl-3 font-medium text-secondary-50/[0.7] hover:text-secondary-50 md:hover:bg-transparent md:hover:text-secondary-50 md:p-0"
+                ><svg
+                  class="inline-block w-6 h-6"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z"
+                    clip-rule="evenodd"
+                  ></path>
+                </svg>
+                <span class="hidden md:inline-block">About</span></a
+              >
+            </li>
+            <li>
+              <a
+                href="../#portfolio"
+                class="block text-center md:text-start py-2 pr-4 pl-3 font-medium text-secondary-50/[0.7] hover:text-secondary-50 md:hover:bg-transparent md:hover:text-secondary-50 md:p-0"
+                ><svg
+                  class="inline-block w-6 h-6"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M6 6V5a3 3 0 013-3h2a3 3 0 013 3v1h2a2 2 0 012 2v3.57A22.952 22.952 0 0110 13a22.95 22.95 0 01-8-1.43V8a2 2 0 012-2h2zm2-1a1 1 0 011-1h2a1 1 0 011 1v1H8V5zm1 5a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1z"
+                    clip-rule="evenodd"
+                  ></path>
+                  <path
+                    d="M2 13.692V16a2 2 0 002 2h12a2 2 0 002-2v-2.308A24.974 24.974 0 0110 15c-2.796 0-5.487-.46-8-1.308z"
+                  ></path>
+                </svg>
+                <span class="hidden md:inline-block">Portfolio</span></a
+              >
+            </li>
+            <li>
+              <a
+                href="../#services"
+                class="block text-center md:text-start py-2 pr-4 pl-3 font-medium text-secondary-50/[0.7] hover:text-secondary-50 md:hover:bg-transparent md:hover:text-secondary-50 md:p-0"
+                ><svg
+                  class="inline-block w-6 h-6"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M12.395 2.553a1 1 0 00-1.45-.385c-.345.23-.614.558-.822.88-.214.33-.403.713-.57 1.116-.334.804-.614 1.768-.84 2.734a31.365 31.365 0 00-.613 3.58 2.64 2.64 0 01-.945-1.067c-.328-.68-.398-1.534-.398-2.654A1 1 0 005.05 6.05 6.981 6.981 0 003 11a7 7 0 1011.95-4.95c-.592-.591-.98-.985-1.348-1.467-.363-.476-.724-1.063-1.207-2.03zM12.12 15.12A3 3 0 017 13s.879.5 2.5.5c0-1 .5-4 1.25-4.5.5 1 .786 1.293 1.371 1.879A2.99 2.99 0 0113 13a2.99 2.99 0 01-.879 2.121z"
+                    clip-rule="evenodd"
+                  ></path>
+                </svg>
+                <span class="hidden md:inline-block">Services</span></a
+              >
+            </li>
+
+            <li>
+              <a
+                href="../#contact"
+                class="block text-center md:text-start py-2 pr-4 pl-3 font-medium text-secondary-50/[0.7] hover:text-secondary-50 md:hover:bg-transparent md:hover:text-secondary-50 md:p-0"
+                ><svg
+                  class="inline-block w-6 h-6"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"
+                  ></path>
+                </svg>
+                <span class="hidden md:inline-block">Contact</span></a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- TOP SECTION -->
+    <div class="h-full grid grid-cols-1 text-shadow-md">
+      <section
+        class="text-secondary-50 bg-fixed bg-gradient-to-t from-emerald-900 to-bgTo-900 shadow-2xl"
+      >
+        <div
+          class="gap-16 items-center py-20 px-4 lg:px-6 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2"
+        >
+          <div class="font-light sm:text-lg">
+            <h2 class="mb-8 text-4xl tracking-tight font-extrabold">
+              Let's become a smart together
+            </h2>
+            <p class="mb-4">
+              In this blog I will write about website development, my
+              experiences in development, and I will also share my thoughts on
+              new front-end development technologies.
+            </p>
+            <p>
+              Join my telegram channel to be the first to know about new articles.
+            </p>
+            <a class="btn mt-8 inline-grid w-28" href="https://t.me/vratskyi" target="_blank">Join</a>
+          </div>
+          <div class="grid grid-cols-2 gap-4 mt-8">
+            <img
+              class="w-full shadow-2xl"
+              src="./media/img/bg-item-1.jpg"
+              alt="office content 1"
+            />
+            <img
+              class="mt-4 w-full lg:mt-10 shadow-2xl"
+              src="./media/img/bg-item-2.jpg"
+              alt="office content 2"
+            />
+          </div>
+        </div>
+      </section>
+    </div>
+    <!-- BLOG CARDS -->
+      <div
+        class="h-full grid grid-cols-1 lg:grid-cols-4 gap-6 place-items-center bg-3 py-8 px-4 lg:py-20 lg:px-6 text-secondary-900"
+      >
+        <div class="col-span-2 place-self-end bg-secondary-50 shadow-2xl">
+          <a href="#">
+            <img
+              class="object-cover w-full"
+              src="./media/img/blog-item-2.jpg"
+              alt=""
+            />
+          </a>
+          <div class="p-5">
+            <a href="#">
+              <h5 class="mb-2 text-2xl font-bold tracking-tight">
+                Noteworthy technology acquisitions 2021
+              </h5>
+            </a>
+            <p class="mb-3 font-normal">
+              Here are the biggest enterprise technology acquisitions of 2021 so
+              far, in reverse chronological order.
+            </p>
+            <a href="#" class="btn inline-flex items-center">
+              Read more
+              <svg
+                class="ml-2 -mr-1 w-4 h-4"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div
+          class="grid col-span-2 grid-rows-2 h-full w-full place-content-center gap-8 text-secondary-900"
+        >
+          <a
+            href="#"
+            class="flex flex-col items-center bg-secondary-50 shadow-2xl md:flex-row md:max-w-xl"
+          >
+            <img
+              class="object-cover w-full h-96 md:h-full md:w-64 md:rounded-none"
+              src="./media/img/blog-item-1.jpg"
+              alt=""
+            />
+            <div class="flex flex-col justify-between p-4 leading-normal">
+              <h5 class="mb-2 text-2xl font-bold tracking-tight">
+                Noteworthy technology acquisitions 2021
+              </h5>
+              <p class="mb-3 font-normal">
+                Here are the biggest enterprise technology acquisitions of 2021
+                so far, in reverse chronological order.
+              </p>
+            </div>
+          </a>
+
+          <a
+            href="#"
+            class="flex flex-col items-center bg-secondary-50 shadow-2xl md:flex-row md:max-w-xl"
+          >
+            <img
+              class="object-cover w-full h-96 md:h-full md:w-64 md:rounded-none"
+              src="./media/img/blog-item-3.jpg"
+              alt=""
+            />
+            <div class="flex flex-col justify-between p-4 leading-normal">
+              <h5 class="mb-2 text-2xl font-bold tracking-tight">
+                Noteworthy technology acquisitions 2021
+              </h5>
+              <p class="mb-3 font-normal">
+                Here are the biggest enterprise technology acquisitions of 2021
+                so far, in reverse chronological order.
+              </p>
+            </div>
+          </a>
+        </div>
+      </div>
+
+    <!-- CALL TO ACTION -->
+    <div
+      class="relative grid grid-cols-1 shadow-2xl md:grid-cols-2 w-full lg:h-52 p-6 md:p-12 xl:p-16 bg-gradient-to-r from-emerald-900 to-bgTo-900"
+    >
+      <div>
+        <h2 class="sub-title-sm">I can make it for you</h2>
+        <h1 class="title-sm md:title">Want to have a website?</h1>
+      </div>
+      <div
+        class="grid content-center place-content-start lg:place-content-center before:content-['Contact'] before:absolute before:right-0 lg:before:right-8 before:top-6 before:text-secondary-50/5 lg:before:text-secondary-50/10 before:text-8xl lg:before:text-9xl before:font-extrabold mt-4 md:mt-0"
+      >
+        <a href="../#contact" class="btn z-10">Get consultation</a>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="p-4 bg-2 md:flex md:items-center md:justify-between md:p-8">
+      <span class="text-sm text-secondary-50 sm:text-center"
+        >© 2022 <a href="./" class="uppercase">Vratskyi</a>. All Rights
+        Reserved.
+      </span>
+      <ul
+        class="grid grid-cols-3 gap-2 mt-3 text-sm text-secondary-50 dark:text-gray-400 sm:mt-0"
+      >
+        <li class="btn">
+          <a
+            href="https://t.me/vratsky0"
+            class="mr-4 md:mr-6 grid place-items-center md:block"
+            target="_blank"
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="md:inline-block mr-2 bi bi-send"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M15.964.686a.5.5 0 0 0-.65-.65L.767 5.855H.766l-.452.18a.5.5 0 0 0-.082.887l.41.26.001.002 4.995 3.178 3.178 4.995.002.002.26.41a.5.5 0 0 0 .886-.083l6-15Zm-1.833 1.89L6.637 10.07l-.215-.338a.5.5 0 0 0-.154-.154l-.338-.215 7.494-7.494 1.178-.471-.47 1.178Z"
+              />
+            </svg>
+            <span class="hidden md:inline-block">Telegram</span></a
+          >
+        </li>
+        <li class="btn">
+          <a
+            href="https://www.behance.net/alexvracky"
+            class="mr-4 md:mr-6 grid place-items-center md:block"
+            target="_blank"
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="md:inline-block mr-2 bi bi-behance"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M4.654 3c.461 0 .887.035 1.278.14.39.07.711.216.996.391.286.176.497.426.641.747.14.32.216.711.216 1.137 0 .496-.106.922-.356 1.242-.215.32-.566.606-.997.817.606.176 1.067.496 1.348.922.281.426.461.957.461 1.563 0 .496-.105.922-.285 1.278a2.317 2.317 0 0 1-.782.887c-.32.215-.711.39-1.137.496a5.329 5.329 0 0 1-1.278.176L0 12.803V3h4.654zm-.285 3.978c.39 0 .71-.105.957-.285.246-.18.355-.497.355-.887 0-.216-.035-.426-.105-.567a.981.981 0 0 0-.32-.355 1.84 1.84 0 0 0-.461-.176c-.176-.035-.356-.035-.567-.035H2.17v2.31c0-.005 2.2-.005 2.2-.005zm.105 4.193c.215 0 .426-.035.606-.07.176-.035.356-.106.496-.216s.25-.215.356-.39c.07-.176.14-.391.14-.641 0-.496-.14-.852-.426-1.102-.285-.215-.676-.32-1.137-.32H2.17v2.734h2.305v.005zm6.858-.035c.286.285.711.426 1.278.426.39 0 .746-.106 1.032-.286.285-.215.46-.426.53-.64h1.74c-.286.851-.712 1.457-1.278 1.848-.566.355-1.243.566-2.06.566a4.135 4.135 0 0 1-1.527-.285 2.827 2.827 0 0 1-1.137-.782 2.851 2.851 0 0 1-.712-1.172c-.175-.461-.25-.957-.25-1.528 0-.531.07-1.032.25-1.493.18-.46.426-.852.747-1.207.32-.32.711-.606 1.137-.782a4.018 4.018 0 0 1 1.493-.285c.606 0 1.137.105 1.598.355.46.25.817.532 1.102.958.285.39.496.851.641 1.348.07.496.105.996.07 1.563h-5.15c0 .58.21 1.11.496 1.396zm2.24-3.732c-.25-.25-.642-.391-1.103-.391-.32 0-.566.07-.781.176-.215.105-.356.25-.496.39a.957.957 0 0 0-.25.497c-.036.175-.07.32-.07.46h3.196c-.07-.526-.25-.882-.497-1.132zm-3.127-3.728h3.978v.957h-3.978v-.957z"
+              />
+            </svg>
+            <span class="hidden md:inline-block">Behance</span></a
+          >
+        </li>
+        <li class="btn">
+          <a
+            href="mailto:vratskiy0@gmail.com"
+            class="mr-4 md:mr-6 grid place-items-center md:block"
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="md:inline-block mr-2 bi bi-envelope"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558L0 4.697ZM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757Zm3.436-.586L16 11.801V4.697l-5.803 3.546Z"
+              />
+            </svg>
+            <span class="hidden md:inline-block">Mail</span></a
+          >
+        </li>
+      </ul>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script src="./js/animate.js"></script>
+    <script src="./js/flowbite.js"></script>
+    <script src="./js/typewriter.js"></script>
+  </body>
+</html>

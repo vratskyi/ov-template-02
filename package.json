@@ -1,0 +1,22 @@
+{
+  "name": "vratskyi",
+  "version": "1.0.0",
+  "description": "education",
+  "main": "tailwind.config.js",
+  "scripts": {
+    "build": "tailwindcss -i ./src/styles/input.css -o ./dist/output.css  --minify --watch"
+  },
+  "author": "vratskyi",
+  "license": "ISC",
+  "devDependencies": {
+    "@tailwindcss/forms": "^0.5.2",
+    "autoprefixer": "^10.4.7",
+    "flowbite": "^1.4.7",
+    "tailwindcss": "^3.1.4",
+    "tailwindcss-textshadow": "^2.1.3"
+  },
+  "dependencies": {
+    "all-animation": "^3.0.5",
+    "http-server": "^14.1.1"
+  }
+}
