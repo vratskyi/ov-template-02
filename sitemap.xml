@@ -4,9 +4,11 @@
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
 
-
+<url>
+  <loc>https://vratskyi.github.io/about/</loc>
+  <lastmod>2023-06-07T23:35:26+00:00</lastmod>
+</url>
 
 
 </urlset>
