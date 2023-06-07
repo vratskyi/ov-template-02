@@ -33,4 +33,4 @@ Disallow:
 User-agent: *
 Disallow: 
 Disallow: /
-Sitemap: https://vratsky.com/sitemap.xml
+Sitemap: https://vratskyi.github.io/about/sitemap.xml
