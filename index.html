@@ -265,8 +265,18 @@
           attractiveness of your company on the Internet.
         </p>
         <div class="mt-4 lg:mt-12">
-          <a href="./src/CV Front-end.docx" class="btn"> Download CV </a>
-        </div>
+        <button onclick="downloadCV()" class="btn"> Download CV </button>
+      </div>
+        <script>
+      function downloadCV() {
+          let link = document.createElement('a');
+          link.href = './src/cv.docx';
+          link.download = 'cv-Oleksii-Vratskyi.docx';
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
+      }
+  </script>
       </div>
 
       <div
